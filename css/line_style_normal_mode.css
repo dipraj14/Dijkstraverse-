@@ -1,0 +1,29 @@
+
+line{
+	user-select: none;
+	/*stroke: saddlebrown;*/
+	/*stroke: #e69e32;*/
+	/*stroke: #f2960c;*/
+	stroke: #c2789e;
+	/*outline: 1px solid black;*/
+	stroke-width:8;
+	pointer-events:all;
+}
+
+
+
+rect{
+	user-select: none;
+	box-sizing: border-box;
+	fill:#67e4de;
+	stroke-width:3;
+	stroke:#ff6666;
+	pointer-events:all;
+}
+
+
+text{
+	user-select: none;
+	color: red;
+	stroke: darkolivegreen;
+}

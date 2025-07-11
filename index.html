@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<title>GraphAlgorithmVisualizer</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/id_style.css">
+	<link rel="stylesheet" type="text/css" href="css/class_style.css">
+	<link rel="stylesheet" type="text/css" href="css/anim_css.css">
+	<link id="line_sheet" rel="stylesheet" type="text/css" href="css/line_style_normal_mode.css">
+</head>
+<body>
+	<div id="slides"  style=" display:flex;">
+		<div class="slide_container">
+			<div id="slide_no">
+				1/17
+			</div>
+			<button id="skip_button" >SKIP</button>
+			<button id="slide_previous" >&#10094;</button>
+			<button id="slide_next" >&#10095;</button>
+			<div class="my_slides" style="display: block;">
+				<img src="images/first_slide.jpg" class="slide_image" height="400" width="800">
+				<div class="text_tag">
+					Text
+				</div>
+			</div>
+			<div class="my_slides" style="display: none;">
+				<img src="images/add_options.jpg" class="slide_image" height="400" width="800">
+				<div class="text_tag">
+					Text
+				</div>
+			</div>
+			<div class="my_slides" style="display: none;">
+				<img src="images/custom_node_additon.jpg" class="slide_image" height="400" width="800">
+				<div class="text_tag">
+					Text
+				</div>
+			</div>
+			<div class="my_slides" style="display: none;">
+				<img src="images/delete1.jpg" class="slide_image" height="400" width="800">
+				<div class="text_tag">
+					Text
+				</div>
+			</div>
+			<div class="my_slides" style="display: none;">
+				<img src="images/delete-2.jpg" class="slide_image" height="400" width="800">
+				<div class="text_tag">
+					Text
+				</div>
+			</div>
+			<div class="my_slides" style="display: none;">
+				<img src="images/foccus.jpg" class="slide_image" height="400" width="800">
+				<div class="text_tag">
+					Text
+				</div>
+			</div>
+			<div class="my_slides" style="display: none;">
+				<img src="images/move1.jpg" class="slide_image" height="400" width="800">
+				<div class="text_tag">
+					Text
+				</div>
+			</div>
+			<div class="my_slides" style="display: none;">
+				<img src="images/move2.jpg" class="slide_image" height="400" width="800">
+				<div class="text_tag">
+					Text
+				</div>
+			</div>
+			<div class="my_slides" style="display: none;">
+				<img src="images/connections1.jpg" class="slide_image" height="400" width="800">
+				<div class="text_tag">
+					Text
+				</div>
+			</div>
+			<div class="my_slides" style="display: none;">
+				<img src="images/connec.jpg" class="slide_image" height="400" width="800">
+				<div class="text_tag">
+					Text
+				</div>
+			</div>
+			<div class="my_slides" style="display: none;">
+				<img src="images/afterconnections.jpg" class="slide_image" height="400" width="800">
+				<div class="text_tag">
+					Text
+				</div>
+			</div>
+			<div class="my_slides" style="display: none;">
+				<img src="images/animation1.jpg" class="slide_image" height="400" width="800">
+				<div class="text_tag">
+					Text
+				</div>
+			</div>
+			<div class="my_slides" style="display: none;">
+				<img src="images/bake_animation.jpg" class="slide_image" height="400" width="800">
+				<div class="text_tag">
+					Text
+				</div>
+			</div>
+			<div class="my_slides" style="display: none;">
+				<img src="images/play_animation.jpg" class="slide_image" height="400" width="800">
+				<div class="text_tag">
+					Text
+				</div>
+			</div>
+			<div class="my_slides" style="display: none;">
+				<img src="images/delay.jpg" class="slide_image" height="400" width="800">
+				<div class="text_tag">
+					Text
+				</div>
+			</div>
+			<div class="my_slides" style="display: none;">
+				<img src="images/forward and back.jpg" class="slide_image" height="400" width="800">
+				<div class="text_tag">
+					Text
+				</div>
+			</div>
+			<div class="my_slides" style="display: none;">
+				<img src="images/generate.jpg" class="slide_image" height="400" width="800">
+				<div class="text_tag">
+					Text
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<div id="graph-container"  style="">
+		<div id = "detail_tab" class="detail_tab_style" style="left: 100px; top: 100px; transform: scale(0);">
+			<div id="curr_dis_tag" >
+				<label>
+					Curr Dis
+				</label>
+				<div id="curr_dis_value" style="color:black;">
+					65
+				</div>
+			</div>
+			<div id="new_dis_tag">
+				<label>
+					New Dis
+				</label>
+				<div id="curr_dis_value" style="color:black;">
+					65
+				</div>
+			</div>
+			<svg x = "0" y = "0" height = "100" width = "100">
+				<path d="M-80 -100 L-80 -20 L-16 -20 L0 0 L16 -20 L80 -20 L80 -100 Z" style = "fill:lightseagreen;stroke:blueviolet;stroke-width:3 ;"/>
+			</svg>
+		</div>
+
+		<button type="button" name="F"  id = "center_button">F</button>
+		<div id="scroll_box" style="visibility: hidden;"></div>
+		<div id="scroll_box_heap" style="visibility: hidden;"></div>
+		<div id = "draw_area_container" style="left: 0.4px; top: 0.4px;">
+			<svg  x = "0" y = "0" height = "100" width = "100" id = "draw_area" xmlns="http://www.w3.org/2000/svg" >
+				<defs>
+				    <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="1.5" orient="auto" markerUnits="strokeWidth">
+				    	<!-- <path d="M0,0 L0,6 L9,3 z" fill="#f00" /> -->
+				    	<path d="M0,0 L0,3 L4,1.5 z" fill="#c2789e" /> 
+				    </marker>
+			  	</defs>
+			</svg>
+		</div>
+		<div  id="graph" style="left: 0.4px; top: 0.4px;">
+		</div>
+	</div>
+	<div id = coding_area class="disappeared">
+		<button  id="code_appear"></button>
+		<div style="margin-bottom: 5px;">Graph-Generation Script editor</div>
+		<div>
+			<button id="generate">Generate</button>
+			<button id="clear">Clear</button>
+		</div>
+		<textarea spellcheck="false" id = "code_editor" type="textarea" rows="5" cols="50" placeholder="Add the Graph-Generation-Script .......">1 2 3 1
+1 3 3 2
+1 4 3 3
+1 5 3 4
+1 16 3 5
+1 11 3 1
+2 17 3 2
+2 6 3 3
+3 7 3 4
+3 10 3 5
+4 9 3 1
+4 6 3 2
+5 8 3 3
+5 17 3 4
+5 16 3 5
+6 8 3 1
+6 19 3 2
+6 13 3 3
+6 7 3 4
+6 9 3 5
+6 18 3 1
+7 17 3 2
+7 12 3 3
+7 14 3 4
+7 9 3 5
+8 19 3 6
+9 15 3 7
+9 18 3 1
+10 12 3 2
+10 16 3 3
+10 11 3 4
+11 16 3 5
+13 18 3 6
+14 15 3 7
+15 18 3 8
+16 17 3 9
+17 20 3 10
+19 20 3 1
+7 20 3 2
+7 21 3 3
+7 22 3 4
+7 23 3 5
+8 20 3 2
+8 21 3 3
+8 22 3 4
+8 23 3 5
+9 20 3 1
+9 21 3 2
+9 22 3 3
+9 23 3 4
+9 24 3 5</textarea>
+		<!-- <div><textarea id = code_editor_output type="textarea" rows="5" cols="5" readonly="true" placeholder="Output......."></textarea>
+		</div> -->
+	</div>
+	<dialog id="dialog" >  
+			<div>
+				<label>
+					Length Value 
+					<input value="50" id = "num_input" type="number" name="guests"  >
+				</label>
+			</div>  
+			<div>
+				<label>Length(0 to 100) 
+					<input id="dialog_slider" value = '50' type="range" name="satisfaction"
+						min="0" max="100" step="1">
+				</label>
+			</div>
+		<button id="hide">Close</button>
+		<button id="connect">Connect</button>   
+	</dialog>
+	<!-- Header -->
+	<h1>GraphAlgorithmVisualizer
+		
+		<button style="height: 40px; " id="tutorial_button" class="radio_buttons links">Tutorial</button>
+		<a target="_blank" href="" style="font-size: 0.6em;"  class="radio_buttons links" >
+			Demo Video<img  height="30px" width="50px" src="images/1x/ytlogo.png" >
+		</a>
+		<a target="_blank" href="https://github.com/dipraj14/Dijkstraverse-" style="font-size: 0.6em;"  class="radio_buttons links" >
+			<img  height="30px" width="70px" src="images/1x/GitHub_Logo.png" >
+		</a>
+	</h1>
+	<h2 id="context_tab"></h2>
+	<h2 id="i_button"></h2>
+	<!-- Control Panel -->
+	<div id="tools_panel" class = "control-panel tools_panel_disappear"  >
+		<button class="radio_buttons panel_buttons" id="tools_panel_button" style="float: right; height: 100%; width: 30px;">T</button>
+		<div class="options" >
+			<label class = "radio_buttons">ADD<input  type="radio" name="mode" checked="true" id="add_button"></label>
+			<label class = "radio_buttons">DELETE<input type="radio" name="mode" id="delete_button"></label>
+			<label class = "radio_buttons">FOCUS<input type="radio" name="mode" id="focus_button"></label>
+			<label class = "radio_buttons">MOVE<input type="radio" name="mode" id="move_button"></label>
+			<label class = "radio_buttons">CONNECT<input type="radio" name="mode" id="connect_button"></label>	
+		</div>
+		<div style="margin-top: 10px;">
+			<label  class="options"  >Connection Type
+				<select id = "connections" name = "connections">
+					<option>Bidirectional Unweighted</option>
+					<option selected>Directional Unweighted</option>
+					<option  >Bidirectional weighted</option>
+					<option>Directional weighted</option>
+				</select>
+			</label>
+		</div>
+		<div style="margin-top: 10px; width: auto;float: left;">
+			<label  class="options">Node Enum
+				<select id = "Vertex_type" name = "Vertex_type">
+					<option selected>1,2,3..</option>
+					<option>Custom name</option>
+				</select>
+			</label>
+		</div>
+		<div class="options" style="float:right;">
+			<button class="radio_buttons" id="recolor_button" style="font-weight: bolder;" title="clear all the coloring created by animations">Recolor</button>
+			<button class="radio_buttons" id="layout_button" style="font-weight: bolder;" title="clear all the coloring created by animations">Layout</button>
+			<button class="radio_buttons" id="clear_button" style="font-weight: bolder;" title="delete the graph">Clear Graph</button>
+		</div>
+		
+	</div>
+	<div id="animation_panel" class = "control-panel animation_panel_disappear"  >
+		<button class="radio_buttons panel_buttons" id="animation_panel_button" >A</button>
+		<div  class="options">
+			<label>Algorithm
+				<select  id = "algorithms">
+					<option>Depth First Search</option>
+					<option>Breadth First Search</option>
+					<option>Dijsktra Algorithm</option>
+					<option>Prims's Algorithm</option>
+					<option>Kruskal Algorithm</option>
+					<option>Articulation Points</option>
+					<!-- <option>Finding Bridges</option>
+					<option>Bellman Ford Algorithm</option> -->
+					
+				</select>
+				<button class="radio_buttons" id="bake">Bake Animation</button>
+				<div>
+					<label>Delay<input id="speed_slider" value = '3' style="margin: 0px;" type="range" name="speed" min="1" max="10" step="1">
+					<label id = "speed_label">1.5</label></label>
+				</div>
+			</label>
+		</div>
+		<div class="options">
+			<button id="back_button" class="radio_buttons"><</button>
+			<button id = "play" class="radio_buttons">Play</button>
+			<button id="forward_button" class="radio_buttons">></button>
+			<input id="animation_slider" value = '3' type="range" name="animation_slider" min="-1" max="10" step="1">
+			<label id = "animation_label" readonly = "true" >1.5</label>
+		</div> 
+	</div>
+<script type="text/javascript" src="js/classandfunction.js"></script>
+<script type="text/javascript" src="js/scroll_heap.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+
+<script type="text/javascript" src="js/line_script.js"></script>
+<script type="text/javascript" src="js/node_script.js"></script>
+<script type="text/javascript" src="js/dialog.js"></script>
+<script type="text/javascript" src="js/button.js"></script>
+<script type="text/javascript" src="js/animation.js"></script>
+<script type="text/javascript" src="js/animations/dfs.js"></script>
+<script type="text/javascript" src="js/animations/bfs.js"></script>
+<script type="text/javascript" src="js/animations/dijsktra.js"></script>
+<script type="text/javascript" src="js/animations/prims.js"></script>
+<script type="text/javascript" src="js/animations/kruskal.js"></script>
+<script type="text/javascript" src="js/animations/cut_ver.js"></script>
+<script type="text/javascript" src="js/layouts/spring_system_basic.js"></script>
+<script type="text/javascript" src="js/layout.js"></script>
+<script type="text/javascript" src="js/tutorial.js"></script>
+<script type="text/javascript" src="js/tutorial_text.js"></script>
+
+
+</body>
+</html>
