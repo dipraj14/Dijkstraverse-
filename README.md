@@ -9,6 +9,9 @@ Whether you're a student, developer, or educator, GraphXplorer makes learning gr
 
 ---
 
+![Uploading image.png…]()
+
+
 ## 🧠 Algorithms Supported
 
 - 🔁 **Breadth-First Search (BFS)**
